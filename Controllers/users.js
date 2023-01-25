@@ -1,5 +1,4 @@
 const { matchedData } = require('express-validator');
-const { where } = require('sequelize');
 const User = require('../models/users');
 const {handleHttpError} = require('../utils/handleError')
 
@@ -14,29 +13,6 @@ const Register = async (req, res)=>{
 
 }
 
-const login = async (req, res)=>{
-    try{
-        req = matchedData(req);
-        const user = await usersModel.findOne({ email: req.email });
-        console.log('Este es el usuario que ha sacado desde: usersModel.findOne({ email: req.email })')
-        console.log(user)
-        if (!user){
-            handleHttpError(res, 'USER_NOT_EXIST',404);
-            return
-        }
-        const data = {
-            user
-        }
-        res.send({data});
-        
-    }catch(e){
-        console.log('Este es el error')
-        console.log(e)
-        console.log('Aqui acaba')
-        handleHttpError(res, 'ERROR_LOGIN_USER')
-    }
-
-}
 
 const getItems = async (req, res)=>{ 
     try {
@@ -59,4 +35,4 @@ const getItem = async (req, res)=>{
     }
 }
 
-module.exports = {Register, login, getItems, getItem};
+module.exports = {Register, getItems, getItem};

@@ -4,10 +4,7 @@ const  {CreateEnvelope, ListOfEnvelopes, GetEnvelope, UpdateAmount, TransferAmou
 const {validatorCreateEnvelope, validatorGetEnvelope, validatorTransfer} = require('../validators/envelopes');
 
 /**
- * Routers:
- * http:localhost:3001/api/envelopes
- * http:localhost:3001/api/envelopes/
- * http:localhost:3001/api/envelopes/:id
+ * Routers: 
  */
 router.get('/',  ListOfEnvelopes);
 

@@ -1,17 +1,12 @@
 const express = require ('express');
 const router = express.Router();
-const  {login, Register, getItems, getItem} = require('../controllers/users')
+const  { Register, getItems, getItem} = require('../controllers/users')
 const {validatorGetUser, validatorCreateUser} = require('../validators/users')
 
 /**
- * Two routers:
- * http:localhost:3001/api/users/login
- * http://localhost:3001/api/users/register
- * http:localhost:3001/api/users
+ * Routers:
  */
 router.post('/register', validatorCreateUser, Register);
-
-router.post('/login',  login);
 
 router.get('/', getItems);
 

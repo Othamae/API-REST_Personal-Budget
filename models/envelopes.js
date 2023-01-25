@@ -20,13 +20,4 @@ const Envelopes = sequelize.define(
       }
 );
 
-// Envelopes.findAllData = function(){
-//     //Envelopes.belongsTo({foreignKey: 'userId'})
-//     return Envelopes.findAll({include: 'userId'})
-// };
-
-// Envelopes.findAllData = function(){    
-//     return Envelopes.findAll({where:{id}, include: 'userId'})
-// };
-
 module.exports = Envelopes;
